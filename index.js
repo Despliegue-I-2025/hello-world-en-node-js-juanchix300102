@@ -1,14 +1,14 @@
-const http = require('http');
+const http = require ('http');
 
-const server = http.createServer((req, res) => {
-  res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+const hostname = 'localhost';
+const port = 3000;
 
-  // Esta línea está comentada. Deberías descomentarla para que funcione
-  // y cambiar el texto que se envía como respuesta.
-
-  //res.end('Poné lo que quieras acá');
+const server = http.createServer ((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hola Mundo');
 });
 
-server.listen(3000, () => {
-  console.log('Servidor escuchando en http://localhost:3000');
+server.listen(port, hostname, () => {
+    console.log('servidor corriendo en http://${hostname}:${port}/');
 });
